@@ -52,24 +52,24 @@ Lang::Lang( WriterConfig *c )
 ***************************************************************/
 wxString Lang::getNakshatraName( const int &nak, const bool &use28, const TEXT_FORMAT format ) const
 {
-	const static wxString k_nakshatra_name_large[28]  = { _( "Aswini" ), _( "Bharani" ), _( "Krittika" ), _( "Rohini" ),
-		_( "Mrigasira" ), _( "Ardra" ), _( "Punarvasu" ), _( "Pushyami" ), _( "Aslesha" ), _( "Magha" ),
-		_( "Poorvaphalguni" ), _( "Uttaraphalguni" ), _( "Hasta" ), _( "Chitra" ), _( "Swati" ), _( "Visakha" ),
-		_( "Anuradha" ), _( "Jyeshta" ), _( "Moola" ), _( "Poorvashadha" ), _( "Uttarashadha" ), _( "Abhijit" ),
-		_( "Sravana" ), _( "Dhanista" ), _( "Satabhisha" ), _( "Poorvabhadra" ), _( "Uttarabhadra" ), _( "Revati" )
+	const static wxString k_nakshatra_name_large[28]  = { _( "அஸ்வினி" ), _( "பரணி" ), _( "கார்த்திகை" ), _( "ரோகினி" ),
+		_( "மிருகசீரிஷம்" ), _( "திருவாதிரை" ), _( "புனர்பூசம்" ), _( "பூசம்" ), _( "ஆயில்யம்" ), _( "மகம்" ),
+		_( "பூரம்" ), _( "உத்திரம்" ), _( "அஸ்த்தம்" ), _( "சித்திரை" ), _( "சுவாதி" ), _( "விசாகம்" ),
+		_( "அனுஷம்" ), _( "கேட்டை" ), _( "மூலம்" ), _( "பூராடம்" ), _( "உத்திராடம்" ), _( "திருவோணம்" ),
+		_( "அவிட்டம்" ), _( "சதயம்" ), _( "பூரட்டாதி" ), _( "உத்திரட்டாதி" ), _( "ரேவதி" )
 	};
 	const static wxString k_nakshatra_name_medium[28]  = {
-		_( "Aswini" ), _( "Bharani" ), _( "Krittika" ), _( "Rohini" ), _( "Mrigasira" ), _( "Ardra" ),
-		_( "Punarvasu" ), _( "Pushyami" ), _( "Aslesha" ), _( "Magha" ), _( "P.Phalguni" ), _( "U.Phalguni" ),
-		_( "Hasta" ), _( "Chitra" ), _( "Swati" ), _( "Visakha" ), _( "Anuradha" ), _( "Jyeshta" ),
-		_( "Moola" ), _( "P.Shadha" ), _( "U.Shadha" ), _( "Abhijit" ), _( "Sravana" ), _( "Dhanista" ),
-		_( "Satabisha" ), _( "P.Bhadra" ), _( "U.Bhadra" ), _( "Revati" )
+		_( "அஸ்வினி" ), _( "பரணி" ), _( "கார்த்திகை" ), _( "ரோகினி" ), _( "மிருகசீரிஷம்" ), _( "திருவாதிரை" ),
+		_( "புனர்பூசம்" ), _( "பூசம்" ), _( "ஆயில்யம்" ), _( "மகம்" ), _( "பூரம்" ), _( "உத்திரம்" ),
+		_( "அஸ்த்தம்" ), _( "சித்திரை" ), _( "சுவாதி" ), _( "விசாகம்" ), _( "அனுஷம்" ), _( "கேட்டை" ),
+		_( "மூலம்" ), _( "பூராடம்" ), _( "உத்திராடம்" ), _( "திருவோணம்" ), _( "அவிட்டம்" ),
+		_( "சதயம்" ), _( "பூரட்டாதி" ), _( "உத்திரட்டாதி" ), _( "ரேவதி" )
 	};
-	const static wxString k_nakshatra_name_short[28]  = { _( "Asw" ), _( "Bhr" ), _( "Kri" ), _( "Roh" ),
-		_( "Mri" ), _( "Ard" ), _( "Pun" ), _( "Pus" ), _( "Asl" ), _( "Mak" ), _( "PPl" ),
-		_( "UPl" ), _( "Hst" ), _( "Cit" ), _( "Sva" ), _( "Vis" ), _( "Anu" ), _( "Jye" ),
-		_( "Mul" ), _( "PSa" ), _( "USa" ), _( "Abh" ), _( "Sra" ), _( "Dha" ), _( "Sat" ),
-		_( "PBa" ), _( "UBa" ), _( "Rev" )
+	const static wxString k_nakshatra_name_short[28]  = { _( "அஸ்" ), _( "பர" ), _( "கார்தி" ), _( "ரோகி" ),
+		_( "மிருக" ), _( "திருவா" ), _( "புனர்" ), _( "பூச" ), _( "ஆயி" ), _( "மக" ), _( "பூர" ),
+		_( "உத்தி" ), _( "அஸ்" ), _( "சித்" ), _( "சுவா" ), _( "விசா" ), _( "அனு" ), _( "கேட்" ),
+		_( "மூல" ), _( "பூடம்" ), _( "உடம்" ), _( "திவோ" ), _( "அவி" ), _( "சத" ),
+		_( "பூடாதி" ), _( "உடாதி" ), _( "ரேவ" )
 	};
 	// shift index after  U. shadha for system of 27 nakshatras
 	const int index = ( ! use28 && ( nak > 20 )) ? nak+1 : nak;
@@ -126,14 +126,14 @@ const wxString Lang::getObjectName( const ObjectId &num, const TEXT_FORMAT &form
 	};
 	const static wxString k_object_large_vedic[8] =
 	{
-		_("Surya"), _("Chandra"), _("Budha"), _("Shukra"), _("Kuja"), _("Guru"), _("Shani"), _("Lagna")
+		_("சூரியன்"), _("சந்திரன்"), _("புதன்"), _("சுக்கிரன்"), _("செவ்வாய்"), _("குரு"), _("சனி"), _("லக்னம்")
 	};
 	const static wxString k_special_object[MAX_EXTENDED_OBJECTS] =
 	{
 		_("Aries"),
-		_("Dhuma"), _("Vyatipata"), _("Parivesha"), _("Chapa"), _("Upaketu"),
+		_("Dhuma"), _("Vyatipata"), _("Parivesha"), _("Chapa"), _("Upaகேது"),
 		_("Kala"), _("Mrityu"), _("Ardhaprahara"), _("Yamaghantaka"), _("Gulika"), _( "Mandi" ),
-		_("Bhava Lagna"), _("Hora Lagna"), _("Ghatika Lagna"), _( "D9Lagna" )
+		_("Bhava லக்னம்"), _("Hora லக்னம்"), _("Ghatika லக்னம்"), _( "D9லக்னம்" )
 	};
 
 	if ( num < MAX_EPHEM_OBJECTS )
@@ -141,8 +141,8 @@ const wxString Lang::getObjectName( const ObjectId &num, const TEXT_FORMAT &form
 		ret = k_object_large[num];
 		if ( vedic ) //|| writercfg->vedicSignNames )
 		{
-			if ( num == OTRUENODE || num == OMEANNODE ) ret = _( "Rahu" );
-			if ( num == OTRUEDESCNODE || num == OMEANDESCNODE ) ret = _( "Ketu" );
+			if ( num == OTRUENODE || num == OMEANNODE ) ret = _( "ராகு" );
+			if ( num == OTRUEDESCNODE || num == OMEANDESCNODE ) ret = _( "கேது" );
 		}
 		if ( writercfg->vedicPlanetNames  )
 		{
@@ -212,8 +212,8 @@ const wxString Lang::getTaraName( const int &index ) const
 
 	if ( index == -1 ) return wxT( "none" );
 
-	const wxString k_tara_name[9] = { _( "Janma" ), _( "Sampat" ), _( "Vipat" ), _( "Kshema" ),
-		_( "Pratyak" ), _( "Sadhaka" ), _( "Vadha" ), _( "Mitra" ), _( "Parma Mitra" ) };
+	const wxString k_tara_name[9] = { _( "ஜென்ம" ), _( "சம்பத்து" ), _( "விபத்து" ), _( "சேம" ),
+		_( "பிரத்தயக்கு" ), _( "சாதக" ), _( "வதை" ), _( "மித்திர" ), _( "பரம மித்ர" ) };
 
 	return k_tara_name[index];
 }
@@ -374,8 +374,8 @@ const wxString Lang::getVimsopakaDignityName( const int &index, const int &digni
 	const static wxString dasavarga_dignity[9] = { _( "Parijata" ), _( "Uttama" ),	_( "Gopura" ), _( "Simhasana" ),
 		_( "Paravata" ), _( "Devaloka" ), _( "Brahmaloka" ), _( "Sakravahana" ), _( "Sridhama"  ) };
 	const static wxString shodasavarga_dignity[15] = { _( "Bhedaka" ), _( "Kusumia"), _( "Nagapushpa" ), _( "Kanduka" ),
-		_( "Kerala" ), _( "Kalpa Vriksha" ), _( "Chandana Vana" ), _( "PoornaChandra" ), _( "Uchchaisrava" ),
-		_( "Dhanvantari" ), _( "Suryakanta" ), _( "Vidruma" ), _( "Chakra Simhasana" ), _( "Goloki" ), _( "Sri Vallabha" ) };
+		_( "Kerala" ), _( "Kalpa Vriksha" ), _( "Chandana Vana" ), _( "Poornaசந்திரன்" ), _( "Uchchaisrava" ),
+		_( "Dhanvantari" ), _( "சூரியன்kanta" ), _( "Vidruma" ), _( "Chakra Simhasana" ), _( "Goloki" ), _( "Sri Vallabha" ) };
 
 	if ( dignity < 2 ) return wxEmptyString;
 
@@ -480,16 +480,16 @@ const wxString Lang::getSignName( const Rasi &i, const TEXT_FORMAT format ) cons
 		_( "Leo" ), _( "Virgo" ), _( "Libra" ), _( "Scorpio" ), _( "Sagittarius" ), _( "Capricorn" ),
 		_( "Aquarius" ), _( "Pisces" ) };
 
-	const static wxString k_sign_full_vedic[12]={ wxT( "Mesha" ), wxT( "Vrishabha" ), wxT( "Mithuna" ),
-		wxT( "Kataka" ), wxT( "Simha" ), wxT( "Kanya" ), wxT( "Tula" ), wxT( "Vrischika" ),
-		wxT( "Dhanus" ), wxT( "Makara" ), wxT( "Kumbha" ), wxT( "Meena" ) };
+	const static wxString k_sign_full_vedic[12]={ wxT( "மேஷம்" ), wxT( "ரிஷபம்" ), wxT( "மிதுனம்" ),
+		wxT( "கடகம்" ), wxT( "சிம்மம்" ), wxT( "கன்னி" ), wxT( "துலாம்" ), wxT( "விருச்சிகம்" ),
+		wxT( "தனுசு" ), wxT( "மகரம்" ), wxT( "கும்பம்" ), wxT( "மீனம்" ) };
 
-	const static wxString k_sign_medium_vedic[12]={ wxT( "Mes" ), wxT( "Vrs" ), wxT( "Mit" ),
-		wxT( "Kat" ), wxT( "Sim" ), wxT( "Kan" ), wxT( "Tul" ), wxT( "Vrc" ), wxT( "Dha" ),
-		wxT( "Mak" ), wxT( "Kum" ), wxT( "Mee" ) };
+	const static wxString k_sign_medium_vedic[12]={ wxT( "மேஷ" ), wxT( "ரிஷ" ), wxT( "மிது" ),
+		wxT( "கடக" ), wxT( "சிம்ம" ), wxT( "கன்" ), wxT( "துலா" ), wxT( "விருச்" ), wxT( "தனு" ),
+		wxT( "மகர" ), wxT( "கும்ப" ), wxT( "மீன" ) };
 
-	const static wxString k_sign_vedic[12]={ wxT( "Ms" ), wxT( "Vs" ), wxT( "Mi" ), wxT( "Kt" ),
-	wxT( "Si" ), wxT( "Kn" ), wxT( "Tu" ), wxT( "Vc" ), wxT( "Dh" ), wxT( "Mk" ), wxT( "Ku" ), wxT( "Mn" ) };
+	const static wxString k_sign_vedic[12]={ wxT( "மே" ), wxT( "ரி" ), wxT( "மி" ), wxT( "கட" ),
+	wxT( "சிம்" ), wxT( "கன்" ), wxT( "து" ), wxT( "விரு" ), wxT( "தனு" ), wxT( "மக" ), wxT( "கும்" ), wxT( "மீன" ) };
 
 	if ( format == TF_LONG )
 	{
@@ -539,11 +539,11 @@ const wxString Lang::getShastiamsaName( const int &i ) const
 		_( "Heramba" ), _( "Brahma" ), _( "Vishnu" ), _( "Maheswara" ), _( "Deva" ),
 		_( "Ardra" ), _( "Kalinasa" ), _( "Kshiteesa" ), _( "Kamalakara" ), _( "Gulika" ),
 		_( "Mrithyu" ), _( "Kaala" ), _( "Davagani" ), _( "Ghora" ), _( "Yama" ),
-		_( "Kantaka" ), _( "Sudha" ), _( "Amrita" ), _( "Poornachandra" ), _( "Vishadagdha" ),
+		_( "Kantaka" ), _( "Sudha" ), _( "Amrita" ), _( "Poornaசந்திரன்" ), _( "Vishadagdha" ),
 		_( "Kulanasa" ), _( "Vamsakshaya" ), _( "Utpata" ), _( "Kaala" ), _( "Saumya" ),
-		_( "Komala" ), _( "Seetala" ), _( "Karaladamshtra" ), _( "Chandramukhi" ), _( "Praveena" ),
+		_( "Komala" ), _( "Seetala" ), _( "Karaladamshtra" ), _( "சந்திரன்mukhi" ), _( "Praveena" ),
 		_( "Kaala Pavaka" ), _( "Dandayudha" ), _( "Nirmala" ), _( "Saumya" ), _( "Kroora" ),
-		_( "Atiseetala" ), _( "Amrita" ), _( "Payodhi" ), _( "Bhramana" ), _( "Chandra Rekha" )
+		_( "Atiseetala" ), _( "Amrita" ), _( "Payodhi" ), _( "Bhramana" ), _( "சந்திரன் Rekha" )
 	};
 	assert( i >= 0 && i < 60 );
 	return k_shastiamsa_name[i];
@@ -556,7 +556,7 @@ const wxString Lang::getShastiamsaName( const int &i ) const
 ***************************************************************/
 const wxString Lang::getBhavaName( const int &i ) const
 {
-	const static wxString k_bhava_name[12] = { _( "Lagna" ), _( "Dhana" ), _( "Sahaja" ), _( "Bandhu" ), _( "Putra" ),
+	const static wxString k_bhava_name[12] = { _( "லக்னம்" ), _( "Dhana" ), _( "Sahaja" ), _( "Bandhu" ), _( "Putra" ),
 		_( "Satru" ), _( "Yuvati" ), _( "Randhra" ), _( "Dharma" ), _( "Karma" ), _( "Labha" ), _( "Vyaya" ) }; 
 	assert( i >= 0 && i < 12 );
 	return k_bhava_name[i];
@@ -1164,4 +1164,5 @@ wxString Formatter::getIntOrEmtpy( const int &a )
 	if ( a ) return  wxString::Format( wxT( "%d" ), a );
 	else return wxEmptyString;
 }
+
 
